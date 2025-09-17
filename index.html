@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgba(255, 255, 255, 0.765);
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background-color: rgba(242, 237, 237, 0.765);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+      }
+      .top p {
+        font-weight: 550;
+        font-size: 15px;
+      }
+      .top img {
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        border-bottom: 1px solid rgb(209, 208, 208);
+        padding: 10px 10px 10px 20px;
+      }
+      .top h3 {
+        font-weight: 400;
+      }
+      .right {
+        display: flex;
+        gap: 20px;
+      }
+      .more {
+        display: flex;
+      }
+      .more img {
+        margin-top: 15px;
+      }
+      .challenges {
+        font-weight: 600;
+        font-size: 15px;
+        padding: 5px 5px 5px 20px;
+        border-bottom: 1px solid rgb(209, 208, 208);
+        text-transform: uppercase;
+      }
+      .challenges p {
+        border-right: 1px solid rgb(209, 208, 208);
+      }
+      .pro {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        background-color: rgb(22, 22, 170);
+        border-radius: 5px;
+        color: white;
+        padding: 3px 3px 3px 3px;
+        margin-top: 13px;
+        width: 40px;
+        height: 20px;
+        text-align: center;
+      }
+      .right .checked {
+        z-index: 7;
+        width: 14px;
+        height: 14px;
+        right: 45px;
+        position: absolute;
+      }
+      .afterhead {
+        background-color: rgb(234, 231, 231);
+        width: 1140px;
+        margin-left: 150px;
+        padding: 0px 20px 0px 20px;
+        margin-top: 30px;
+        border-radius: 10px;
+      }
+      .section {
+        width: 400px;
+      }
+      .in-row {
+        margin-left: 150px;
+        margin-right: 150px;
+      }
+      .afterhead img {
+        width: 12px;
+        height: 12px;
+      }
+      .check {
+        display: flex;
+        gap: 8px;
+      }
+      .row {
+        display: flex;
+        gap: 30px;
+      }
+      .check img {
+        margin-top: 18px;
+      }
+      .unlock {
+        display: flex;
+        justify-content: space-between;
+      }
+      .search {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0px 30px 0px;
+        margin-left: 150px;
+        margin-right: 150px;
+      }
+      .button {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        margin-right: 30px;
+      }
+      button {
+        background-color: rgb(213, 9, 9);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 20px;
+        width: 200px;
+        font-weight: 600;
+      }
+      .input img {
+        width: 18px;
+        height: 18px;
+        z-index: 2;
+        position: absolute;
+        left: 390px;
+        margin-top: 16px;
+      }
+      .filter img {
+        width: 15px;
+        height: 15px;
+        margin-top: 15px;
+      }
+      .level img {
+        width: 15px;
+        height: 15px;
+      }
+      .input input {
+        width: 250px;
+        z-index: 1;
+        padding: 17px 13px 17px 13px;
+        font-size: 15px;
+      }
+      .in-one-row {
+        display: flex;
+        gap: 30px;
+      }
+      .filter {
+        display: flex;
+        background-color: white;
+        padding: 0px 10px 0px 10px;
+        width: 120px;
+        gap: 10px;
+        border-radius: 5px;
+      }
+      .level {
+        display: flex;
+        background-color: white;
+        padding: 0px 10px 0px 10px;
+        border-radius: 5px;
+      }
+      .level img {
+        margin-top: 15px;
+        width: 20px;
+        height: 20px;
+        margin-left: 30px;
+      }
+      .after-search {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-left: 150px;
+        margin-right: 150px;
+      }
+      .not-sure {
+        display: flex;
+        gap: 20px;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+      .showing {
+        font-size: 13px;
+      }
+      .not-sure a {
+        margin-top: 12px;
+      }
+      .in-row img {
+        width: 370px;
+        height: 270px;
+
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: rgb(233, 230, 230);
+        object-fit: cover;
+      }
+      .in-row {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 30px;
+      }
+      .language {
+        display: flex;
+        gap: 10px;
+      }
+      .junior {
+        display: flex;
+      }
+      input {
+        padding: 10px;
+      }
+      .level-up {
+        display: flex;
+      }
+      .advanced {
+        display: flex;
+      }
+      .pad {
+        box-sizing: border-box;
+        padding: 10px 20px 20px 20px;
+      }
+      .section {
+        background-color: white;
+        padding: 0px;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+      .number {
+        color: white;
+      }
+      .word {
+        padding: 5px;
+        font-weight: 600;
+      }
+      .html {
+        color: rgb(38, 136, 207);
+        font-weight: 700;
+      }
+      .css {
+        color: blueviolet;
+        font-weight: 700;
+      }
+      .js {
+        font-weight: 700;
+        color: rgb(255, 83, 112);
+      }
+      .number {
+        background-color: rgb(255, 187, 0);
+        padding: 3px;
+      }
+      .word {
+        background-color: white;
+        border: 2px solid rgb(255, 187, 0);
+        color: rgb(255, 187, 0);
+      }
+      .number-2 {
+        background-color: rgb(255, 77, 0);
+        color: white;
+        padding: 4px;
+      }
+      .word-2 {
+        border: 2px solid rgb(255, 77, 0);
+        color: rgb(255, 77, 0);
+        padding: 5px;
+      }
+      .word-3 {
+        border: 2px solid rgb(27, 141, 42);
+        color: rgb(27, 141, 42);
+        padding: 5px;
+      }
+      .number-3 {
+        color: white;
+        background-color: rgb(27, 141, 42);
+        padding: 4px;
+      }
+      .pad .language {
+        margin: 0;
+      }
+      .pad h4 {
+        margin: 10px 0px 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <h3>Frontend Mentor</h3>
+        <div class="right">
+          <div class="more">
+            <p><em>EXPLORE</em></p>
+            <img src="down-arrow.png" />
+          </div>
+          <div class="more">
+            <p><em>FOR COMPANIES</em></p>
+            <img src="down-arrow.png" />
+          </div>
+          <div class="more">
+            <p><em>UNLOCK</em></p>
+            <p class="pro"><em>PRO</em></p>
+          </div>
+          <img src="bell.png" />
+          <img class="bag" src="shopping-bag.png" />
+          <img class="checked" src="checked.png" />
+          <img src="thought-bubble.png" />
+        </div>
+      </div>
+      <div class="challenges">
+        <p>Challenges</p>
+      </div>
+
+      <div class="body">
+        <div class="afterhead">
+          <h3>Unlock full access</h3>
+          <div class="unlock">
+            <div class="AI">
+              <div class="row">
+                <div class="check">
+                  <img src="check.png" />
+                  <p>AI-powered solution reviews</p>
+                </div>
+
+                <div class="check">
+                  <img src="check.png" />
+                  <p>50+ portfolio-ready premium projects</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="check">
+                  <img src="check.png" />
+                  <p>Proffesional Figma design files</p>
+                </div>
+
+                <div class="check">
+                  <img src="check.png" />
+                  <p>And more!</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="button">
+              <button><em>UPGRADE NOW</em></button>
+              <p>Work in a team?</p>
+              <a href="#">Upgrade your team to Pro</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="search">
+          <div class="input">
+            <input type="text" placeholder="Search challenges..." />
+            <img src="search (1).png" />
+          </div>
+          <div class="in-one-row">
+            <div class="filter">
+              <img src="filter (1).png" />
+              <p>Filter</p>
+            </div>
+
+            <div class="level">
+              <p>Newest to oldest</p>
+              <img src="down-arrow.png" />
+            </div>
+          </div>
+        </div>
+
+        <div class="after-search">
+          <div class="showing">
+            <p>Showing 119 of 119 challenges</p>
+          </div>
+          <div class="not-sure">
+            <p>Not sure where to start</p>
+            <a href="#">Try our learning paths</a>
+          </div>
+        </div>
+
+        <div class="in-row">
+          <div class="section">
+            <img src="image-6.png" />
+            <div class="pad">
+              <h4>Weather app</h4>
+              <div class="language">
+                <p class="html">HTML</p>
+                <p class="css">CSS</p>
+                <p class="js">JS</p>
+              </div>
+              <div class="level-up">
+                <p class="number">3</p>
+                <p class="word">INTERMEDIATE</p>
+              </div>
+              <p>
+                Lorem ipsum dolor sit <br />amet consectetur adipisicing<br />
+                elit. Atque, blanditiis.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <img src="image-5.png" />
+            <div class="pad">
+              <h4>Recipe finder website</h4>
+              <div class="language">
+                <p class="html">HTML</p>
+                <p class="css">CSS</p>
+                <p class="js">JS</p>
+              </div>
+              <div class="level-up">
+                <p class="number">3</p>
+                <p class="word">INTERMEDIATE</p>
+              </div>
+              <p>
+                Lorem ipsum dolor sit<br />
+                amet consectetur adipisicing<br />
+                elit. Atque, blanditiis.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <img src="image-4.png" />
+            <div class="pad">
+              <h4>Mood tracking app</h4>
+              <div class="language">
+                <p class="html">HTML</p>
+                <p class="css">CSS</p>
+                <p class="js">JS</p>
+              </div>
+              <div class="advanced">
+                <p class="number-2">4</p>
+                <p class="word-2">ADVANCED</p>
+              </div>
+              <p>
+                Lorem ipsum dolor sit<br />
+                amet consectetur adipisicing <br />elit. Atque, blanditiis.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="in-row">
+          <div class="section">
+            <img src="image-3.png" />
+            <div class="pad">
+              <h4>Browser extension manager UI</h4>
+              <div class="language">
+                <p class="html">HTML</p>
+                <p class="css">CSS</p>
+                <p class="js">JS</p>
+              </div>
+              <div class="junior">
+                <p class="number-3">2</p>
+                <p class="word-3">JUNIOR</p>
+              </div>
+              <p>
+                Lorem ipsum dolor sit<br />
+                amet consectetur adipisicing <br />elit. Atque, blanditiis.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <img src="image-2.png" />
+            <div class="pad">
+              <h4>Personal blog</h4>
+              <div class="language">
+                <p class="html">HTML</p>
+                <p class="css">CSS</p>
+                <p class="js">JS</p>
+              </div>
+              <div class="level-up">
+                <p class="number">3</p>
+                <p class="word">INTERMEDIATE</p>
+              </div>
+              <p>
+                Lorem ipsum dolor sit<br />
+                amet consectetur adipisicing <br />elit. Atque, blanditiis.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <img src="image-1.png" />
+            <div class="pad">
+              <h4>Character counter</h4>
+              <div class="language">
+                <p class="html">HTML</p>
+                <p class="css">CSS</p>
+                <p class="js">JS</p>
+              </div>
+              <div class="junior">
+                <p class="number-3">2</p>
+                <p class="word-3">JUNIOR</p>
+              </div>
+              <p>
+                Lorem ipsum dolor sit <br />amet consectetur adipisicing
+                <br />elit. Atque, blanditiis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
